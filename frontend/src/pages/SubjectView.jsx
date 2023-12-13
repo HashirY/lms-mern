@@ -185,7 +185,7 @@ const SubjectView = ({ isOpen }) => {
                 {actualLeaderboard.map((obj, i) => (
                   <div
                     key={obj.name}
-                    className="flex gap-x-2 mb-3 items-center mb-4"
+                    className="flex gap-x-2  items-center mb-4"
                   >
                     <div
                       className={`${
