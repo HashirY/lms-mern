@@ -25,6 +25,9 @@ const studentSchema = mongoose.Schema(
     imageUrl: {
       type: String,
     },
+    teacher_email: {
+      type: String,
+    },
   },
   { timestamps: true }
 );

@@ -1,20 +1,16 @@
 import axios from "axios";
 import {
   Activity,
-  AtSignIcon,
   BookCheck,
   Bookmark,
   CalendarSearch,
   Key,
   ListOrdered,
-  Mail,
-  MailQuestion,
   MailSearch,
   Shell,
   ShieldCheck,
   TrendingDown,
   TrendingUp,
-  User,
   UserCheck,
   UserCircle,
 } from "lucide-react";
@@ -100,7 +96,7 @@ const StudentHome = () => {
   // console.log(groupedObjects);
 
   return (
-    <main className="mt-24 min-h-screen font-poppins w-full mr-3">
+    <main className="mt-24 min-h-screen font-poppins w-full mr-3 mb-10">
       {loading && <Shell className="h-10 w-10 animate-spin" />}
       {!loading && (
         <>
@@ -127,7 +123,7 @@ const StudentHome = () => {
             </div>
 
             <div className="flex gap-x-4">
-              {imageId !== "none" && (
+              {/* {imageId !== "none" && (
                 <div className="col-span-3 gap-y-0  h-20 w-20">
                   <img
                     src={`http://drive.google.com/uc?export=view&id=${imageId}`}
@@ -135,7 +131,7 @@ const StudentHome = () => {
                     className="rounded-md border-4 border-accent h-20 w-20"
                   />
                 </div>
-              )}
+              )} */}
               <div className="mt-4 grid grid-cols-3 gap-y-8 w-full">
                 <div className="flex gap-x-2 items-center">
                   <ListOrdered className="h-4 w-4 text-accent" />
@@ -324,6 +320,22 @@ const StudentHome = () => {
                 )
               )}
             </div>
+          </section>
+          <section className="mt-10 flex items-center justify-center flex-col">
+            <h1 className="text-red-400 underline">
+              Have any issues regarding the result ?
+            </h1>
+            <span className="flex items-center justify-center gap-x-4 ">
+              <p className="text-text">Send a direct mail to your mentor</p>
+              <br />
+              <a
+                href={`mailto:${student.teacher_email}`}
+                className="font-bold text-blue-500 flex gap-x-1 items-center"
+              >
+                <MailSearch className="h-4 w-4" />
+                {student.teacher_email}
+              </a>
+            </span>
           </section>
         </>
       )}

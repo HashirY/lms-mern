@@ -36,6 +36,7 @@ app.post("/students", async (req, res) => {
       rollnumber: req.body.rollnumber,
       password: req.body.password,
       imageUrl: req.body.imageUrl || "image link would be here",
+      teacher_email: req.body.teacher_email || "",
     };
 
     const student = await Student.create(newStudent);

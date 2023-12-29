@@ -186,14 +186,14 @@ const StudentSidebarOne = ({ isOpen }) => {
           </div>
           <div className="flex gap-x-2 items-center">
             <UserButton />
-            <span
+            <button
               onClick={() => {
                 navigate(`/`);
               }}
-              className="text-text cursor-pointer"
+              className="bg-accent text-text opacity-90 hover:opacity-100  py-2 px-4 rounded mt-2 mr-2 gap-x-2 flex items-center mb-2"
             >
               Logout Here!
-            </span>
+            </button>
           </div>
         </aside>
       )}

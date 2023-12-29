@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { enqueueSnackbar } from "notistack";
 
 const html = document.querySelector("html");
 
@@ -161,7 +162,7 @@ function App() {
         navigate(`/student-dashboard/${matchedStudent._id}`);
         console.log(matchedStudent);
       } else {
-        console.log("Wrong password");
+        enqueueSnackbar("Wrong id or password!", { variant: "error" });
       }
     }
   };

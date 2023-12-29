@@ -1,7 +1,7 @@
 import { Shell, StepForward, Trash2, User } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { useAuth } from "@clerk/clerk-react";
+import { useAuth, useUser } from "@clerk/clerk-react";
 import { useSnackbar } from "notistack";
 import { NavLink } from "react-router-dom";
 
@@ -12,6 +12,8 @@ const Student = ({ isOpen }) => {
   const [studentImageUrl, setStudentImageUrl] = useState("");
   const [loading, setLoading] = useState(false);
   const { userId } = useAuth();
+  const user = useUser();
+  const teacher_email = user.user.emailAddresses[0].emailAddress;
   const { enqueueSnackbar } = useSnackbar();
   const [students, setStudents] = useState([]);
 
@@ -56,6 +58,7 @@ const Student = ({ isOpen }) => {
         teacher_id: userId,
         password: password,
         imageUrl: studentImageUrl.length === 0 ? "" : studentImageUrl,
+        teacher_email: teacher_email,
       })
       .then(() => {
         enqueueSnackbar("Student Added Successfully", { variant: "success" });

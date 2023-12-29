@@ -63,9 +63,7 @@ const StudentNotes = () => {
           <section className="mt-10">
             <div>
               <h1 className="text-text text-2xl font-bold">Teacher's Notes</h1>
-              <p className="text-accent">
-                One must know what their collegues are teaching!
-              </p>
+              <p className="text-accent">Knowledge is the key to success</p>
             </div>
 
             <div className="mt-6 flex flex-col gap-y-4 mb-2">
